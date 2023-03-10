@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
-import "./index.css";
+import "./index.scss";
 import DashboardPage from "./pages/dashboard-page";
 import LoginPage from "./pages/login-page";
 import { AuthProvider } from "./providers/auth-provider";

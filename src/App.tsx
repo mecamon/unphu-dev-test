@@ -9,6 +9,8 @@ function App() {
   useEffect(() => {
     if (!isLogged) {
       navigate("/login", { replace: true });
+    } else {
+      navigate("/", { replace: true });
     }
   }, []);
   return <Outlet />;

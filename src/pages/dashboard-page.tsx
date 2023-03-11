@@ -1,14 +1,9 @@
-import { GenericDropdown } from "../components/generic-dropdown";
+import { MainHeader } from "../components/main-header/main-header";
 
 function DashboardPage() {
   return (
     <div>
-      <h1>This is the dashboard page</h1>
-      <GenericDropdown
-        text=""
-        iconText="account_circle"
-        childrenList={[<button key="logout-button">Log out</button>]}
-      />
+      <MainHeader></MainHeader>
     </div>
   );
 }

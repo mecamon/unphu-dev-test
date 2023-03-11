@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { makeClickOutside } from "../utils/click-outside-element";
-import { progresiveCount } from "../utils/progresive-count";
+import { makeClickOutside } from "../../utils/click-outside-element";
+import { progresiveCount } from "../../utils/progresive-count";
+import styles from "./generic-dropdown-list.module.scss";
 
 export function GenericDropdownList({
   triggerID,
@@ -22,7 +23,11 @@ export function GenericDropdownList({
   }, []);
 
   return (
-    <div id={containerID} data-testid="dropdown-list">
+    <div
+      className={styles.container}
+      id={containerID}
+      data-testid="dropdown-list"
+    >
       {elements}
     </div>
   );

@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useState } from "react";
-import { progresiveCount } from "../utils/progresive-count";
-import { GenericDropdownList } from "./generic-dropdown-list";
+import { progresiveCount } from "../../utils/progresive-count";
+import { GenericDropdownList } from "../generic-dropdown-list/generic-dropdown-list";
 
-export function GenericDropdown({ text, iconText, childrenList }: Props) {
+export function GenericDropdown({ text, icon, childrenList }: Props) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [triggerID, setTriggerID] = useState<string>(
     progresiveCount().toString()
@@ -16,7 +16,7 @@ export function GenericDropdown({ text, iconText, childrenList }: Props) {
         onClick={() => setIsVisible(!isVisible)}
       >
         <span>{text}</span>
-        <span className="material-icons">{iconText}</span>
+        {icon}
       </button>
       {isVisible && (
         <GenericDropdownList
@@ -31,6 +31,6 @@ export function GenericDropdown({ text, iconText, childrenList }: Props) {
 
 interface Props {
   text?: string;
-  iconText?: string;
+  icon?: JSX.Element;
   childrenList: JSX.Element[];
 }

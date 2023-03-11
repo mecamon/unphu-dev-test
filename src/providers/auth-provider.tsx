@@ -3,7 +3,7 @@ import React, { ReactNode, useContext } from "react";
 const AuthContext = React.createContext<AuthContextType>(null!);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [isLogged, setIsLogged] = React.useState<boolean>(false);
+  const [isLogged, setIsLogged] = React.useState<boolean>(true);
 
   const contextValue = React.useMemo(
     () => ({

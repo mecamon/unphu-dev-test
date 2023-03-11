@@ -1,16 +1,18 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   color: var(--border-color-1);
+  font-family: 'Poppins', sans-serif;
 }
 :root {
-  --base-color-1: #f8efe0;
+  --base-color-1: #f2eee7;
   --base-color-2: #f4dd99;
   --border-color-1: #886d9c;
-  --accent-color: #95c9f4;
+  --accent-color: #2d8bd7;
   --danger-color: #de7e99;
   --complement-color: #d0d9eb;
 }

@@ -1,0 +1,78 @@
+.container {
+  margin-left: 20px;
+  padding: 60px 32px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  h2 {
+    margin-left: 16px;
+    margin-bottom: 40px !important;
+    font-size: 32px;
+  }
+}
+
+.cardsArea {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards {
+  min-width: 40%;
+  margin: 12px;
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-color-1);
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  span {
+    display: block;
+    color: var(--border-color-1);
+  }
+  hr {
+    border: 3px var(--accent-color) solid;
+    border-radius: 99999px;
+    margin: 8px 0px;
+  }
+}
+.head{
+  display: flex;
+  align-items: center;
+  .name {
+    font-weight: 600;
+    font-size: 24px;
+    display: block;
+  }
+  .genderIcon {
+    display: block;
+    font-size: 40px;
+    margin-right: 0.6rem;
+  }
+}
+
+.mail {
+  display: flex;
+  align-items: center;
+  span {
+    display: block;
+    margin-right: 0.6rem;
+  }
+}
+
+.gender {
+  display: flex;
+  align-items: center;
+  span {
+    display: block;
+    margin-right: 0.6rem;
+  }
+}
+
+.id {
+  display: flex;
+  align-items: center;
+  span {
+    display: block;
+    margin-right: 0.6rem;
+  }
+}

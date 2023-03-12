@@ -2,11 +2,11 @@ export interface User {
   names: string;
   firstLastname: string;
   secondLastname: string;
-  cedula: number;
-  age: number;
+  cedula: number | undefined;
+  age: number | undefined;
   gender: Gender;
   address: string[];
-  phone: number;
+  phone: number | undefined;
   email: string;
   status: string;
   anyKids: string;

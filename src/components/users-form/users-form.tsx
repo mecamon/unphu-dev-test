@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { User } from "../../models/models";
 import * as validators from "../../utils/validators";
 import { CustomInput } from "../custom-input/custom-input";
@@ -10,26 +10,41 @@ export function UsersForm() {
     names: "",
     firstLastname: "",
     secondLastname: "",
-    cedula: 0,
-    age: 0,
+    cedula: undefined,
+    age: undefined,
     gender: "m",
     address: [""],
-    phone: 0,
+    phone: undefined,
     email: "",
     status: "single",
     anyKids: "no",
     dateOfBirth: "",
   });
 
+  const formIsCompleted = useMemo(() => {
+    return (
+      userData.names !== "" &&
+      userData.firstLastname !== "" &&
+      userData.secondLastname !== "" &&
+      userData.dateOfBirth !== "" &&
+      validators.validEmail(userData.email) &&
+      userData.cedula !== undefined &&
+      userData.age !== undefined &&
+      userData.phone !== undefined &&
+      userData.address.every((a) => a !== "")
+    );
+  }, [userData]);
+
   function changeHandler(e: any) {
     const field = e.target.name;
     const value = e.target.value;
+    const type = e.target.type;
     if (field === "address") {
       updateAddress(e);
     } else {
       setUserData((u) => ({
         ...u,
-        [field]: value,
+        [field]: type === "number" ? Number(value) : value,
       }));
     }
   }
@@ -60,11 +75,20 @@ export function UsersForm() {
     }));
   }
 
+  function inputHandler(e: any) {
+    e.preventDefault();
+    if (formIsCompleted) {
+      console.log("IS IS COMPLETED");
+    } else {
+      console.log("IS NOT COMPLETED");
+    }
+  }
+
   return (
     <section className={styles.container}>
       <div className={styles.content}>
         <h2>Agregar nuevo usuario</h2>
-        <form action="">
+        <form onInput={(e) => inputHandler(e)}>
           <div className={styles.formDoubleGroup}>
             <div className={styles.formGroup}>
               <label htmlFor="names">Nombres</label>
@@ -242,6 +266,12 @@ export function UsersForm() {
               />
             </div>
           </div>
+          <input
+            className={styles.submit}
+            type="submit"
+            value="Agregar"
+            disabled={!formIsCompleted}
+          />
         </form>
       </div>
     </section>

@@ -3,6 +3,8 @@ import { SideBar } from "../components/side-bar/side-bar";
 import { SideBarTab } from "../components/side-bar-tab/side-bar-tab";
 import { UsersList } from "../components/users-list/users-list";
 import { UserPreview } from "../models/models";
+import { useState } from "react";
+import { UsersForm } from "../components/users-form/users-form";
 
 const users: UserPreview[] = [
   {
@@ -38,6 +40,8 @@ const users: UserPreview[] = [
 ];
 
 function DashboardPage() {
+  const [name, setName] = useState("");
+
   return (
     <MainLayout>
       <SideBar>
@@ -54,8 +58,9 @@ function DashboardPage() {
         />
         <SideBarTab text="Salir" iconText="logout" onClick={() => null!} />
       </SideBar>
-      <main>
-        <UsersList users={users} />
+      <main className="w-full">
+        {/* <UsersList users={users} /> */}
+        <UsersForm />
       </main>
     </MainLayout>
   );

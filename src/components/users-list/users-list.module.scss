@@ -1,5 +1,5 @@
 .container {
-  margin-left: 20px;
+  margin: 0 10px;
   padding: 60px 32px;
   background-color: white;
   border-radius: 16px;
@@ -10,6 +10,13 @@
     font-size: 32px;
   }
 }
+
+@media (min-width: 1240px) {
+  .container {
+    margin-left: 20px;
+  }
+}
+
 
 .cardsArea {
   display: flex;

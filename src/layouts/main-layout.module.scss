@@ -1,9 +1,11 @@
 .container {
-  @media (min-width: 1240px) {
+  margin: 20px auto;
+}
+@media (min-width: 1240px) {
+  .container {
     margin: 40px auto;
     width: 1200px;
     height: 100%;
     display: flex;
   }
-
 }

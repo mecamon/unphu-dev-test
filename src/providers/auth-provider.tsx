@@ -1,14 +1,33 @@
-import React, { ReactNode, useContext } from "react";
+import React, { ReactNode, useContext, useEffect } from "react";
 
 const AuthContext = React.createContext<AuthContextType>(null!);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [isLogged, setIsLogged] = React.useState<boolean>(true);
+  const [isLogged, setIsLogged] = React.useState<boolean>(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLogged(true);
+    }
+  }, []);
+
+  function login() {
+    //hardcoding a token in absence of a proper backend
+    localStorage.setItem("token", "q2134qwedadassdasdafa");
+    setIsLogged(true);
+  }
+
+  function logout() {
+    localStorage.removeItem("token");
+    setIsLogged(false);
+  }
 
   const contextValue = React.useMemo(
     () => ({
       isLogged,
-      setIsLogged,
+      login,
+      logout,
     }),
     [isLogged]
   );
@@ -28,5 +47,6 @@ export function useAuthContext() {
 
 interface AuthContextType {
   isLogged: boolean;
-  setIsLogged: React.Dispatch<React.SetStateAction<boolean>>;
+  login: () => void;
+  logout: () => void;
 }

@@ -7,7 +7,7 @@ export function required<T>(input: T): boolean {
 
 export function validEmail(email: string) {
   const pattern =
-    /^[a-zA-Z\d\.-_]{1,64}@[a-zA-Z\d\.-_]{4,255}\.[a-zA-Z\d]{2,64}$/;
+    /^[a-zA-Z\d\.-_]{1,64}@[a-zA-Z\d\.-_]{2,255}\.[a-zA-Z\d]{2,64}$/;
   return pattern.test(email);
 }
 

@@ -79,8 +79,6 @@ export function UsersForm() {
     e.preventDefault();
     if (formIsCompleted) {
       console.log("IS IS COMPLETED");
-    } else {
-      console.log("IS NOT COMPLETED");
     }
   }
 
@@ -113,6 +111,7 @@ export function UsersForm() {
               />
             </div>
           </div>
+
           <div className={styles.formDoubleGroup}>
             <div className={styles.formGroup}>
               <label htmlFor="secondLastname">Segundo apellido</label>
@@ -137,6 +136,7 @@ export function UsersForm() {
               />
             </div>
           </div>
+
           <div className={styles.formDoubleGroup}>
             <div className={styles.formGroup}>
               <label htmlFor="cedula">Cédula</label>
@@ -266,8 +266,9 @@ export function UsersForm() {
               />
             </div>
           </div>
+
           <input
-            className={styles.submit}
+            className="submit"
             type="submit"
             value="Agregar"
             disabled={!formIsCompleted}

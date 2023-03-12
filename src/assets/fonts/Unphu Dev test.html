@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="./Unphu Dev test_files/client"></script>
+
+    
+    <link href="./Unphu Dev test_files/icon" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./Unphu Dev test_files/fav.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unphu Dev test</title>
+  <style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/index.scss">@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--border-color-1);
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --base-color-1: #f2eee7;
+  --input--bg-color: #f7f2ee;
+  --base-color-2: #f4dd99;
+  --border-color-1: #704b8c;
+  --accent-color: #2d8bd7;
+  --danger-color: #d63949;
+  --complement-color: #d0d9eb;
+}
+body {
+  background-color: var(--base-color-1);
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+input {
+  color: black;
+}
+.user-icon {
+  display: block;
+  font-size: 50px;
+  color: white;
+  background-color: var(--border-color-1);
+  border: 1px var(--border-color-1) solid;
+  border-radius: 99999px;
+}
+.list-button-item {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: var(--base-color-1);
+  border: 1px var(--border-color-1) solid;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.list-button-item:hover {
+  opacity: 0.8;
+}
+.w-full {
+  width: 100%;
+}
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.submit {
+  cursor: pointer;
+  padding: 8px 32px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.submit:hover {
+  opacity: 0.9;
+}
+.submit:disabled {
+  background-color: var(--complement-color);
+}
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.h-screen {
+  height: 100vh;
+}
+.flex-row-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/generic-dropdown-list/generic-dropdown-list.module.scss">._container_1sipe_1 {
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  position: absolute;
+  top: 5rem;
+  right: 2rem;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/main-header/main-header.module.scss">._header_3upp4_1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color: var(--base-color-2);
+  border: 2px var(--border-color-1) solid;
+}
+
+._content_3upp4_10 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 12px;
+}
+._content_3upp4_10 div {
+  display: flex;
+  align-items: center;
+}
+._content_3upp4_10 div > span {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  ._content_3upp4_10 {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+  }
+  ._content_3upp4_10 div {
+    display: flex;
+    align-items: center;
+  }
+  ._content_3upp4_10 div > span {
+    display: block;
+    font-family: "Rubik Iso", cursive;
+    font-size: 40px;
+    margin-left: 1rem;
+  }
+}
+@media (min-width: 1240px) {
+  ._content_3upp4_10 {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    padding: 0px;
+  }
+  ._content_3upp4_10 div {
+    display: flex;
+    align-items: center;
+  }
+}
+._menu_3upp4_58 {
+  margin-right: 1rem;
+}
+._menu_3upp4_58 span {
+  font-size: 40px;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/layouts/main-layout.module.scss">._container_nczdl_1 {
+  margin: 20px auto;
+}
+
+@media (min-width: 1240px) {
+  ._container_nczdl_1 {
+    margin: 40px auto;
+    width: 1200px;
+    height: 100%;
+    display: flex;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/side-bar/side-bar.module.scss">._container_148lt_1 > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+footer {
+  margin-top: 4rem;
+}
+footer p {
+  font-size: 14px;
+}
+
+._container_148lt_1 {
+  position: absolute;
+  padding: 60px 32px;
+  width: fit-content;
+  height: 100%;
+  min-width: 340px;
+  max-width: 340px;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+._container_148lt_1 h2 {
+  margin-left: 16px;
+  margin-bottom: 40px !important;
+  font-size: 32px;
+}
+
+._hidden_148lt_28 {
+  left: -340px;
+}
+
+._visible_148lt_32 {
+  left: 0px;
+}
+
+._close_148lt_36 {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+._close_148lt_36 span {
+  display: block;
+  font-size: 36px;
+}
+
+@media (min-width: 1240px) {
+  ._container_148lt_1 {
+    position: relative;
+    padding: 60px 32px;
+    width: fit-content;
+    height: fit-content;
+    min-width: 340px;
+    max-width: 340px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  ._container_148lt_1 h2 {
+    margin-left: 16px;
+    margin-bottom: 40px !important;
+    font-size: 32px;
+  }
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/side-bar-tab/side-bar-tab.module.scss">._containerSelected_skn0b_1 {
+  padding: 8px 40px;
+  border-radius: 9999px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+._container_skn0b_1 {
+  padding: 8px 40px;
+  border-radius: 9999px;
+  background-color: var(--base-color-2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+._container_skn0b_1:hover {
+  opacity: 0.8;
+}
+
+._textSelected_skn0b_19 {
+  display: block;
+  color: white;
+  font-size: 18px;
+}
+
+._iconSelected_skn0b_25 {
+  margin-left: 4px;
+  display: block;
+  color: white;
+  font-size: 26px;
+}
+
+._text_skn0b_19 {
+  display: block;
+  color: white;
+  font-size: 18px;
+}
+
+._icon_skn0b_25 {
+  margin-left: 4px;
+  display: block;
+  color: white;
+  font-size: 26px;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/user-card/user-card.module.scss">._cardContainer_1291i_1 {
+  min-width: 280px;
+  width: 50%;
+  padding: 12px;
+}
+._cardContainer_1291i_1 ._card_1291i_1 {
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-color-1);
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+._cardContainer_1291i_1 ._card_1291i_1 span {
+  display: block;
+  color: var(--border-color-1);
+}
+._cardContainer_1291i_1 ._card_1291i_1 hr {
+  border: 3px var(--accent-color) solid;
+  border-radius: 99999px;
+  margin: 8px 0px;
+}
+
+._head_1291i_24 {
+  display: flex;
+  align-items: center;
+}
+._head_1291i_24 ._name_1291i_28 {
+  font-weight: 600;
+  font-size: 24px;
+  display: block;
+}
+._head_1291i_24 ._genderIcon_1291i_33 {
+  display: block;
+  font-size: 40px;
+  margin-right: 0.6rem;
+}
+
+._mail_1291i_39 {
+  display: flex;
+  align-items: center;
+}
+._mail_1291i_39 span {
+  display: block;
+  margin-right: 0.6rem;
+}
+
+._gender_1291i_33 {
+  display: flex;
+  align-items: center;
+}
+._gender_1291i_33 span {
+  display: block;
+  margin-right: 0.6rem;
+}
+
+._id_1291i_57 {
+  display: flex;
+  align-items: center;
+}
+._id_1291i_57 span {
+  display: block;
+  margin-right: 0.6rem;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/users-list/users-list.module.scss">._container_cy3nt_1 {
+  margin: 0 10px;
+  padding: 60px 32px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+._container_cy3nt_1 h2 {
+  margin-left: 16px;
+  margin-bottom: 40px !important;
+  font-size: 32px;
+}
+
+@media (min-width: 1240px) {
+  ._container_cy3nt_1 {
+    margin-left: 20px;
+  }
+}
+._cardsArea_cy3nt_19 {
+  display: flex;
+  flex-wrap: wrap;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/custom-input/custom-input.module.scss">._container_c4eue_1 {
+  margin: 0 8px;
+  display: block;
+  min-width: 200px;
+}
+._container_c4eue_1 input {
+  border-radius: 8px;
+  height: 32px;
+  text-indent: 8px;
+  width: 100%;
+  background-color: var(--input--bg-color);
+}
+
+._valid_c4eue_14 {
+  border: 1px var(--accent-color) solid;
+}
+
+._invalid_c4eue_18 {
+  border: 1px var(--danger-color) solid;
+}
+
+._danger_c4eue_22 {
+  display: block;
+  color: var(--danger-color);
+  font-size: 14px;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/login-form/login-form.module.scss">._container_1xh21_1 {
+  min-width: 240px;
+  width: 400px;
+  padding: 2rem;
+  margin: 12px;
+  background-color: var(--base-color-2);
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+._container_1xh21_1 ._submitContainer_1xh21_10 {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+._container_1xh21_1 ._logo_1xh21_16 {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+._container_1xh21_1 input[type=text], ._container_1xh21_1 input[type=password] {
+  background-color: var(--input--bg-color);
+}
+._container_1xh21_1 label {
+  margin-left: 12px;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/custom-radio-input/custom-radio-input.module.scss">._container_19mqc_1 {
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+}
+._container_19mqc_1 input {
+  border-radius: 8px;
+  text-indent: 8px;
+  width: 32px;
+}
+
+._valid_19mqc_13 {
+  border: 1px var(--accent-color) solid;
+}
+
+._invalid_19mqc_17 {
+  border: 1px var(--danger-color) solid;
+}
+
+._danger_19mqc_21 {
+  display: block;
+  color: var(--danger-color);
+  font-size: 14px;
+}
+
+._radioLabel_19mqc_27 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}</style><style type="text/css" data-vite-dev-id="/Users/meca/src/apps/unphu-react-dev-test/src/components/users-form/users-form.module.scss">._container_1ntec_1 {
+  margin: 0 10px;
+}
+._container_1ntec_1 ._content_1ntec_4 {
+  padding: 60px 32px;
+  background-color: white;
+  border-radius: 16px;
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+._container_1ntec_1 h2 {
+  margin-left: 16px;
+  margin-bottom: 40px !important;
+  font-size: 32px;
+}
+._container_1ntec_1 label {
+  margin-left: 8px;
+}
+
+@media (min-width: 1240px) {
+  ._container_1ntec_1 {
+    margin-left: 20px;
+  }
+}
+._formDoubleGroup_1ntec_25 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+._formGroup_1ntec_32 {
+  width: 100%;
+  min-width: 200px;
+}
+
+@media (min-width: 700px) {
+  ._formDoubleGroup_1ntec_25 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  ._formGroup_1ntec_32 {
+    width: 50%;
+    min-width: 200px;
+  }
+}
+form {
+  padding: 0;
+  margin: 0;
+}
+
+._addressLabel_1ntec_54 {
+  display: flex;
+  align-items: center;
+}
+
+._addAddressButton_1ntec_59 {
+  margin-left: 0.6rem;
+  border-radius: 9999px;
+  background-color: var(--accent-color);
+}
+._addAddressButton_1ntec_59 span {
+  color: white;
+  font-size: 20px;
+}
+
+._removeAddressButton_1ntec_69 {
+  margin-left: 0.6rem;
+  border-radius: 9999px;
+  background-color: var(--danger-color);
+}
+._removeAddressButton_1ntec_69 span {
+  color: white;
+  font-size: 20px;
+}
+
+._removeAddressButton_1ntec_69:disabled {
+  background-color: var(--complement-color);
+}
+
+._buttonGroup_1ntec_83 {
+  display: flex;
+  align-items: center;
+}</style></head>
+  <body cz-shortcut-listen="true">
+    <div id="root"><div><header class="_header_3upp4_1"><div class="_content_3upp4_10"><div id="logo"><img src="./Unphu Dev test_files/fav.png" alt="logo"><span>Quick forms</span></div><div><div><button data-testid="trigger-dropdown" id="100000"><span></span><span class="material-icons user-icon">person</span></button></div></div></div></header><div class="_container_nczdl_1"><div><aside class="_container_148lt_1"><h2>Menu</h2><button data-testid="tab-button" class="_containerSelected_skn0b_1"><span class="_textSelected_skn0b_19">Listar usuarios</span><span class="material-icons button-icon _iconSelected_skn0b_25">view_list</span></button><button data-testid="tab-button" class="_container_skn0b_1"><span class="_text_skn0b_19">Agregar usuario</span><span class="material-icons button-icon _icon_skn0b_25">add_circle</span></button><button data-testid="tab-button" class="_container_skn0b_1"><span class="_text_skn0b_19">Salir</span><span class="material-icons button-icon _icon_skn0b_25">logout</span></button><footer><p>This is a placeholder for the footer. This is a placeholder for the footer. This is a placeholder for the footer. This is a placeholder for the footer.</p></footer></aside></div><main class="w-full"><section class="_container_1ntec_1"><div class="_content_1ntec_4"><h2>Agregar nuevo usuario</h2><form><div class="_formDoubleGroup_1ntec_25"><div class="_formGroup_1ntec_32"><label for="names">Nombres</label><div class="_container_c4eue_1"><input autocomplete="off" id="names" type="text" name="names" class="_invalid_c4eue_18" value=""><span class="_danger_c4eue_22 visible">Este campo es requerido</span></div></div><div class="_formGroup_1ntec_32"><label for="firstLastname">Primer apellido</label><div class="_container_c4eue_1"><input autocomplete="off" id="firstLastname" type="text" name="firstLastname" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Este campo es requerido</span></div></div></div><div class="_formDoubleGroup_1ntec_25"><div class="_formGroup_1ntec_32"><label for="secondLastname">Segundo apellido</label><div class="_container_c4eue_1"><input autocomplete="off" id="secondLastname" type="text" name="secondLastname" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Este campo es requerido</span></div></div><div class="_formGroup_1ntec_32"><label for="email">Email</label><div class="_container_c4eue_1"><input autocomplete="off" id="email" type="email" name="email" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Formato de correo inválido</span></div></div></div><div class="_formDoubleGroup_1ntec_25"><div class="_formGroup_1ntec_32"><label for="cedula">Cédula</label><div class="_container_c4eue_1"><input autocomplete="off" id="cedula" type="number" name="cedula" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Este campo es requerido</span></div></div><div class="_formGroup_1ntec_32"><label for="phone">Teléfono</label><div class="_container_c4eue_1"><input autocomplete="off" id="phone" type="number" name="phone" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Este campo es requerido</span></div></div></div><div class="_formDoubleGroup_1ntec_25"><div class="_formGroup_1ntec_32"><label for="dateOfBirth">Fecha de nacimiento</label><div class="_container_c4eue_1"><input autocomplete="off" id="dateOfBirth" type="date" name="dateOfBirth" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Este campo es requerido</span></div></div><div class="_formGroup_1ntec_32"><label for="age">Edad</label><div class="_container_c4eue_1"><input autocomplete="off" id="age" type="number" name="age" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Este campo es requerido</span></div></div></div><div class="_formDoubleGroup_1ntec_25"><div class="_formGroup_1ntec_32"><label for="gender">Género</label><div class="_container_19mqc_1"><label class="_radioLabel_19mqc_27" for="Masculino"><input id="Masculino" type="radio" name="gender" value="m" checked="">Masculino</label><label class="_radioLabel_19mqc_27" for="Femenino"><input id="Femenino" type="radio" name="gender" value="f">Femenino</label></div></div><div class="_formGroup_1ntec_32"><label for="status">Estado civil</label><div class="_container_19mqc_1"><label class="_radioLabel_19mqc_27" for="Soltero"><input id="Soltero" type="radio" name="status" value="single" checked="">Soltero</label><label class="_radioLabel_19mqc_27" for="Casado"><input id="Casado" type="radio" name="status" value="maried">Casado</label></div></div></div><div class="_formDoubleGroup_1ntec_25"><div class="_formGroup_1ntec_32"><label class="_addressLabel_1ntec_54" for="">Dirección<div class="_buttonGroup_1ntec_83"><button type="button" class="_addAddressButton_1ntec_59"><span class="material-icons">add</span></button><button type="button" class="_removeAddressButton_1ntec_69" disabled=""><span class="material-icons">remove</span></button></div></label><div class="_container_c4eue_1"><input autocomplete="off" id="0" type="text" name="address" placeholder="dirección 1" class="_valid_c4eue_14" value=""><span class="_danger_c4eue_22 hidden">Este campo es requerido</span></div></div></div><div class="_formDoubleGroup_1ntec_25"><div class="_formGroup_1ntec_32"><label for="anyKids">Tiene hijos</label><div class="_container_19mqc_1"><label class="_radioLabel_19mqc_27" for="No"><input id="No" type="radio" name="anyKids" value="no" checked="">No</label><label class="_radioLabel_19mqc_27" for="Sí"><input id="Sí" type="radio" name="anyKids" value="si">Sí</label></div></div></div><input class="submit" type="submit" disabled="" value="Agregar"></form></div></section></main></div></div></div>
+    <script type="module" src="./Unphu Dev test_files/main.tsx"></script>
+  
+
+</body></html>

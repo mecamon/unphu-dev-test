@@ -34,7 +34,7 @@ function App() {
     } else {
       navigate("/", { replace: true });
     }
-  }, []);
+  }, [isLogged]);
   return <Outlet />;
 }
 

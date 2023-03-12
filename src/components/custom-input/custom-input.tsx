@@ -15,6 +15,7 @@ export function CustomInput({
   return (
     <div className={styles.container}>
       <input
+        autoComplete="off"
         id={id ? id : fieldName}
         type={type}
         name={fieldName}
@@ -36,7 +37,7 @@ export function CustomInput({
 }
 
 interface Props {
-  type: "text" | "email" | "number" | "date";
+  type: "text" | "email" | "number" | "date" | "password";
   value: any;
   id?: string;
   placeholder?: string;

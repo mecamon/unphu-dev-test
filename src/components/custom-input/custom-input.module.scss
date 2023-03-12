@@ -1,12 +1,13 @@
 .container {
   margin: 0 8px;
   display: block;
-  min-width: 220px;
+  min-width: 200px;
   input {
     border-radius: 8px;
     height: 32px;
     text-indent: 8px;
     width: 100%;
+    background-color: var(--input--bg-color);
   }
 }
 .valid {

@@ -1,7 +1,9 @@
+import { LoginForm } from "../components/login-form/login-form";
+
 function LoginPage() {
   return (
-    <div>
-      <h1>This is the login page</h1>
+    <div className="w-screen h-screen flex-row-centered">
+      <LoginForm />
     </div>
   );
 }

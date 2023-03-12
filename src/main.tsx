@@ -11,6 +11,7 @@ import "./index.scss";
 import DashboardPage from "./pages/dashboard-page";
 import LoginPage from "./pages/login-page";
 import { AuthProvider } from "./providers/auth-provider";
+import { ViewModeProvider } from "./providers/view-mode-provider";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -18,7 +19,9 @@ const router = createBrowserRouter(
       path="/"
       element={
         <AuthProvider>
-          <App />
+          <ViewModeProvider>
+            <App />
+          </ViewModeProvider>
         </AuthProvider>
       }
     >

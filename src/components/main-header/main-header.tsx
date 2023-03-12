@@ -1,7 +1,11 @@
+import { useViewModeContext } from "../../providers/view-mode-provider";
 import { GenericDropdown } from "../generic-dropdown/generic-dropdown";
 import styles from "./main-header.module.scss";
 
 export function MainHeader() {
+  const { isMobileView, isShowingMobileMenu, setIsShowingMobileMenu } =
+    useViewModeContext();
+
   return (
     <header className={styles.header}>
       <div className={styles.content}>
@@ -9,14 +13,24 @@ export function MainHeader() {
           <img src="/fav.png" alt="logo" />
           <span>Quick forms</span>
         </div>
-        <GenericDropdown
-          icon={<span className="material-icons user-icon">person</span>}
-          childrenList={[
-            <button className="list-button-item" key="logout-button">
-              Log out
-            </button>,
-          ]}
-        />
+        <div>
+          {isMobileView && (
+            <button
+              className={styles.menu}
+              onClick={() => setIsShowingMobileMenu(!isShowingMobileMenu)}
+            >
+              <span className="material-icons">menu</span>
+            </button>
+          )}
+          <GenericDropdown
+            icon={<span className="material-icons user-icon">person</span>}
+            childrenList={[
+              <button className="list-button-item" key="logout-button">
+                Log out
+              </button>,
+            ]}
+          />
+        </div>
       </div>
     </header>
   );

@@ -7,7 +7,7 @@ import { UserPreview } from "../models/models";
 const users: UserPreview[] = [
   {
     id: "1",
-    completeName: "Carlos Mejia",
+    completeName: "Carlo Alberto Mejia Aquino",
     email: "carlos@mail.com",
     gender: "m",
   },
@@ -19,8 +19,8 @@ const users: UserPreview[] = [
   },
   {
     id: "3",
-    completeName: "Carlos Mejia",
-    email: "carlos@mail.com",
+    completeName: "Ramon Perez Sosa",
+    email: "ramon@mail.com",
     gender: "m",
   },
   {

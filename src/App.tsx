@@ -1,10 +1,32 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAuthContext } from "./providers/auth-provider";
+import { useViewModeContext } from "./providers/view-mode-provider";
 
 function App() {
   const { isLogged } = useAuthContext();
+  const { setIsMobileView } = useViewModeContext();
   const navigate = useNavigate();
+
+  function onWindowsResize(e: any) {
+    handleMobileView(e.target.innerWidth);
+  }
+
+  function handleMobileView(innerWidth: number) {
+    if (innerWidth <= 1240) {
+      setIsMobileView(true);
+    } else {
+      setIsMobileView(false);
+    }
+  }
+
+  useEffect(() => {
+    handleMobileView(window.innerWidth);
+    window.addEventListener("resize", onWindowsResize);
+    return () => {
+      window.removeEventListener("resize", onWindowsResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (!isLogged) {

@@ -9,11 +9,7 @@ export function CustomRadioInput({
   return (
     <div className={styles.container}>
       {options.map((o) => (
-        <label
-          key={!o.value ? o.name : o.value}
-          className={styles.radioLabel}
-          htmlFor={o.name}
-        >
+        <label key={o.name} className={styles.radioLabel} htmlFor={o.name}>
           <input
             id={o.name}
             type="radio"

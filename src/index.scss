@@ -11,7 +11,7 @@
 :root {
   --base-color-1: #f2eee7;
   --base-color-2: #f4dd99;
-  --border-color-1: #886d9c;
+  --border-color-1: #704b8c;
   --accent-color: #2d8bd7;
   --danger-color: #d63949;
   --complement-color: #d0d9eb;
@@ -28,6 +28,9 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+input {
+  color: black;
 }
 
 .user-icon {

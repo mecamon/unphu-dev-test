@@ -67,3 +67,21 @@ form {
     font-size: 20px;
   }
 }
+
+.removeAddressButton {
+  margin-left: 0.6rem;
+  border-radius: 9999px;
+  background-color: var(--danger-color);
+  span {
+    color: white;
+    font-size: 20px;
+  }
+}
+.removeAddressButton:disabled {
+  background-color: var(--complement-color);
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+}

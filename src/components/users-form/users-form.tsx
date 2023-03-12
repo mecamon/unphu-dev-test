@@ -17,17 +17,30 @@ export function UsersForm() {
     phone: 0,
     email: "",
     status: "single",
-    anyKids: false,
+    anyKids: "no",
     dateOfBirth: "",
   });
 
   function changeHandler(e: any) {
     const field = e.target.name;
     const value = e.target.value;
+    if (field === "address") {
+      updateAddress(e);
+    } else {
+      setUserData((u) => ({
+        ...u,
+        [field]: value,
+      }));
+    }
+  }
 
+  function updateAddress(e: any) {
+    const pos = Number(e.target.id);
+    const addresses = [...userData.address];
+    addresses[pos] = e.target.value;
     setUserData((u) => ({
       ...u,
-      [field]: value,
+      address: [...addresses],
     }));
   }
 
@@ -35,6 +48,15 @@ export function UsersForm() {
     setUserData((u) => ({
       ...u,
       address: [...u.address, ""],
+    }));
+  }
+
+  function deleteOneAddress() {
+    const addresses = [...userData.address];
+    addresses.pop();
+    setUserData((u) => ({
+      ...u,
+      address: [...addresses],
     }));
   }
 
@@ -107,7 +129,7 @@ export function UsersForm() {
               <label htmlFor="phone">Teléfono</label>
               <CustomInput
                 fieldName="phone"
-                messageErr="Formato de correo inválido"
+                messageErr="Este campo es requerido"
                 type="number"
                 onChange={(e) => changeHandler(e)}
                 value={userData?.phone}
@@ -172,7 +194,7 @@ export function UsersForm() {
             <div className={styles.formGroup}>
               <label className={styles.addressLabel} htmlFor="">
                 Dirección
-                <div>
+                <div className={styles.buttonGroup}>
                   <button
                     type="button"
                     className={styles.addAddressButton}
@@ -180,14 +202,23 @@ export function UsersForm() {
                   >
                     <span className="material-icons">add</span>
                   </button>
+                  <button
+                    type="button"
+                    className={styles.removeAddressButton}
+                    disabled={userData.address.length === 1}
+                    onClick={() => deleteOneAddress()}
+                  >
+                    <span className="material-icons">remove</span>
+                  </button>
                 </div>
               </label>
               {userData.address.map((a, i) => (
                 <CustomInput
+                  id={i.toString()}
                   key={i}
                   type="text"
-                  value={a[i]}
-                  fieldName={a[i]}
+                  value={a}
+                  fieldName="address"
                   placeholder={`dirección ${i + 1}`}
                   messageErr="Este campo es requerido"
                   onChange={changeHandler}
@@ -203,8 +234,8 @@ export function UsersForm() {
               <CustomRadioInput
                 value={userData.anyKids}
                 options={[
-                  { name: "No", value: false },
-                  { name: "Sí", value: true },
+                  { name: "No", value: "no" },
+                  { name: "Sí", value: "si" },
                 ]}
                 fieldName="anyKids"
                 onChange={changeHandler}

@@ -9,7 +9,7 @@ export interface User {
   phone: number;
   email: string;
   status: string;
-  anyKids: boolean;
+  anyKids: string;
   dateOfBirth: string;
 }
 

@@ -3,6 +3,7 @@ import styles from "./custom-input.module.scss";
 
 export function CustomInput({
   type,
+  id,
   fieldName,
   messageErr,
   placeholder,
@@ -14,7 +15,7 @@ export function CustomInput({
   return (
     <div className={styles.container}>
       <input
-        id={fieldName}
+        id={id ? id : fieldName}
         type={type}
         name={fieldName}
         placeholder={placeholder}
@@ -37,6 +38,7 @@ export function CustomInput({
 interface Props {
   type: "text" | "email" | "number" | "date";
   value: any;
+  id?: string;
   placeholder?: string;
   fieldName: string;
   messageErr: string;

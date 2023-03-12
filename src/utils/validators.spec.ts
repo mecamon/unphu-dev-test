@@ -39,7 +39,7 @@ describe("required tests", () => {
   const requiredTest = [
     { testName: "valid string input", entry: "Jonh", expected: true },
     { testName: "invalid string input", entry: "", expected: false },
-    { testName: "invalid number input", entry: undefined, expected: false },
+    { testName: "invalid number input", entry: 0, expected: false },
     { testName: "valid number input", entry: 323, expected: true },
   ];
   requiredTest.forEach((tt) => {

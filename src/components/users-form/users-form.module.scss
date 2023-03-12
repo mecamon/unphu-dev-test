@@ -28,14 +28,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // width: 100%;
+}
+
+.formGroup {
+  width: 100%;
+  min-width: 200px;
 }
 
 @media (min-width: 700px) {
   .formDoubleGroup {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: start;
     flex-wrap: wrap;
   }
   .formGroup {
@@ -47,4 +51,19 @@
 form {
   padding: 0;
   margin: 0;
+}
+
+.addressLabel {
+  display: flex;
+  align-items: center;
+}
+
+.addAddressButton {
+  margin-left: 0.6rem;
+  border-radius: 9999px;
+  background-color: var(--accent-color);
+  span {
+    color: white;
+    font-size: 20px;
+  }
 }

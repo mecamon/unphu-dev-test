@@ -1,0 +1,27 @@
+.container {
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+  input {
+    border-radius: 8px;
+    text-indent: 8px;
+    width: 32px;
+  }
+}
+.valid {
+  border: 1px var(--accent-color) solid;
+}
+.invalid {
+  border: 1px var(--danger-color) solid;
+}
+.danger {
+  display: block;
+  color: var(--danger-color);
+  font-size: 14px;
+}
+.radioLabel {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}

@@ -2,7 +2,7 @@ export function required<T>(input: T): boolean {
   if (typeof input === "string") {
     return input.length > 0;
   }
-  return input != undefined;
+  return input !== 0;
 }
 
 export function validEmail(email: string) {

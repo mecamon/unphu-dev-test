@@ -4,7 +4,8 @@ import styles from "./custom-input.module.scss";
 export function CustomInput({
   type,
   fieldName,
-  messageErr = "",
+  messageErr,
+  placeholder,
   onChange,
   value,
   validateFunc,
@@ -13,8 +14,10 @@ export function CustomInput({
   return (
     <div className={styles.container}>
       <input
+        id={fieldName}
         type={type}
         name={fieldName}
+        placeholder={placeholder}
         className={!isValid ? styles.invalid : styles.valid}
         value={value}
         onChange={onChange}
@@ -32,8 +35,9 @@ export function CustomInput({
 }
 
 interface Props {
-  type: "text" | "email" | "number";
+  type: "text" | "email" | "number" | "date";
   value: any;
+  placeholder?: string;
   fieldName: string;
   messageErr: string;
   onChange: (e: any) => void;

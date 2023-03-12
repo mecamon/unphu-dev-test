@@ -5,6 +5,7 @@ import { UsersList } from "../components/users-list/users-list";
 import { UserPreview } from "../models/models";
 import { UsersForm } from "../components/users-form/users-form";
 import { useAuthContext } from "../providers/auth-provider";
+import { useState } from "react";
 
 const users: UserPreview[] = [
   {
@@ -41,6 +42,18 @@ const users: UserPreview[] = [
 
 function DashboardPage() {
   const { logout } = useAuthContext();
+  const [currentTab, setCurrentTab] = useState<Tab>("list");
+
+  function getTabs(): JSX.Element {
+    switch (currentTab) {
+      case "list":
+        return <UsersList users={users} />;
+      case "add":
+        return <UsersForm />;
+      default:
+        return <h2>No hay tab seleccionado</h2>;
+    }
+  }
 
   return (
     <MainLayout>
@@ -48,22 +61,22 @@ function DashboardPage() {
         <SideBarTab
           text="Listar usuarios"
           iconText="view_list"
-          onClick={() => null!}
-          isSelected={true}
+          isSelected={currentTab === "list"}
+          onClick={() => setCurrentTab("list")}
         />
         <SideBarTab
           text="Agregar usuario"
           iconText="add_circle"
-          onClick={() => null!}
+          isSelected={currentTab === "add"}
+          onClick={() => setCurrentTab("add")}
         />
         <SideBarTab text="Salir" iconText="logout" onClick={() => logout()} />
       </SideBar>
-      <main className="w-full">
-        {/* <UsersList users={users} /> */}
-        <UsersForm />
-      </main>
+      <main className="w-full">{getTabs()}</main>
     </MainLayout>
   );
 }
+
+type Tab = "list" | "add";
 
 export default DashboardPage;

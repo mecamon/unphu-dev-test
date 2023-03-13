@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "names": "Carlos Alberto",
+      "firstLastname": "Mejía",
+      "secondLastname": "Aquino",
+      "cedula": 10012344356,
+      "age": 25,
+      "gender": "m",
+      "address": ["Direccion numero 1", "Direccion numero 2"],
+      "phone": 8091234567,
+      "email": "carlos@mail.com",
+      "status": "single",
+      "anyKids": false,
+      "dateOfBirth": "1995-10-05T14:48:00.000Z"
+    }
+  ]
+}

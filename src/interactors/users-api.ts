@@ -4,20 +4,21 @@ const appHeaders = new Headers();
 appHeaders.append("Content-Type", "application/json");
 
 export class UsersApi {
-  static async getAll(): Promise<any> {
-    const res = await fetch("http://localhost:3000/users", {
-      headers: appHeaders,
-      method: "GET",
-    });
-    return await res.json();
+  static async getAll(page: number = 1, limit: number = 5): Promise<Response> {
+    return await fetch(
+      `http://localhost:3000/users?_page=${page}&_limit=${limit}`,
+      {
+        headers: appHeaders,
+        method: "GET",
+      }
+    );
   }
 
-  static async addOne(user: User): Promise<any> {
-    const res = await fetch("http://localhost:3000/users", {
+  static async addOne(user: User): Promise<Response> {
+    return await fetch("http://localhost:3000/users", {
       headers: appHeaders,
       method: "POST",
       body: JSON.stringify(user),
     });
-    return await res.json();
   }
 }

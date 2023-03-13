@@ -34,6 +34,76 @@
       "anyKids": "no",
       "dateOfBirth": "1998-06-23",
       "id": 2
+    },
+    {
+      "names": "Maria",
+      "firstLastname": "Hernandez",
+      "secondLastname": "Rodriguez",
+      "cedula": 123141243,
+      "age": 23,
+      "gender": "f",
+      "address": [
+        "a"
+      ],
+      "phone": 12312312312,
+      "email": "maria@mail.com",
+      "status": "maried",
+      "anyKids": "no",
+      "dateOfBirth": "2023-03-21",
+      "id": 3
+    },
+    {
+      "names": "John",
+      "firstLastname": "Doe",
+      "secondLastname": "Doe",
+      "cedula": 123123131,
+      "age": 22,
+      "gender": "m",
+      "address": [
+        "Illinois, Chicago",
+        "USA"
+      ],
+      "phone": 123131231,
+      "email": "jonh@mail.com",
+      "status": "maried",
+      "anyKids": "no",
+      "dateOfBirth": "2023-03-14",
+      "id": 4
+    },
+    {
+      "names": "Pedro",
+      "firstLastname": "Morla",
+      "secondLastname": "Sánchez",
+      "cedula": 1231231231,
+      "age": 29,
+      "gender": "m",
+      "address": [
+        "Calle 1, San Juan",
+        "Republica Dominicana"
+      ],
+      "phone": 12312312311231,
+      "email": "pedro@mail.com",
+      "status": "single",
+      "anyKids": "no",
+      "dateOfBirth": "2023-03-15",
+      "id": 5
+    },
+    {
+      "names": "Jorgelina",
+      "firstLastname": "Contreras",
+      "secondLastname": "Sosa",
+      "cedula": 1231231231,
+      "age": 32,
+      "gender": "f",
+      "address": [
+        "Calle 8, Samaná"
+      ],
+      "phone": 234231212311,
+      "email": "jorgelin@mail.com",
+      "status": "maried",
+      "anyKids": "si",
+      "dateOfBirth": "2023-03-14",
+      "id": 6
     }
   ]
 }

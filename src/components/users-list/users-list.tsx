@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchUsers } from "../../store/slices/users-slice";
 import { UserCard } from "../user-card/user-card";
@@ -8,9 +8,10 @@ export function UsersList() {
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.users.list);
   const loading = useAppSelector((state) => state.users.loading);
+  const [page, setPage] = useState(2);
 
   useEffect(() => {
-    dispatch(fetchUsers());
+    dispatch(fetchUsers(page));
   }, []);
 
   if (loading === "loading") {

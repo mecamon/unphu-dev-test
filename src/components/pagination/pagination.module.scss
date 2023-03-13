@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  margin-top: 40px;
+  .pageButton {
+    margin: 0 2px;
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background-color: var(--base-color-2);
+  }
+  .pageButton:disabled {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  .cornerButtons {
+    margin: 0 8px;
+  }
+  .cornerButtons:disabled {
+    color: var(--complement-color);
+  }
+}

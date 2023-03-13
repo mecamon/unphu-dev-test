@@ -1,4 +1,5 @@
 export interface User {
+  id?: string | number;
   names: string;
   firstLastname: string;
   secondLastname: string;
@@ -14,7 +15,7 @@ export interface User {
 }
 
 export interface UserPreview {
-  id: string;
+  id?: string | number;
   completeName: string;
   email: string;
   gender: Gender;

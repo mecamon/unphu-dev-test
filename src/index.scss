@@ -8,6 +8,9 @@
   color: var(--border-color-1);
   font-family: 'Poppins', sans-serif;
 }
+* {
+  transition: background-color 200ms ease-in, color 200ms ease-in ;
+}
 :root {
   --base-color-1: #f2eee7;
   --input--bg-color: #f4f1ee;

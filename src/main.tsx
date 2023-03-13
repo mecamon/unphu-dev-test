@@ -12,6 +12,8 @@ import DashboardPage from "./pages/dashboard-page";
 import LoginPage from "./pages/login-page";
 import { AuthProvider } from "./providers/auth-provider";
 import { ViewModeProvider } from "./providers/view-mode-provider";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -20,7 +22,9 @@ const router = createBrowserRouter(
       element={
         <AuthProvider>
           <ViewModeProvider>
-            <App />
+            <Provider store={store}>
+              <App />
+            </Provider>
           </ViewModeProvider>
         </AuthProvider>
       }

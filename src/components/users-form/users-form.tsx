@@ -1,11 +1,14 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useAppDispatch } from "../../hooks/redux";
 import { User } from "../../models/models";
+import { addUser, resetLoadingState } from "../../store/slices/users-slice";
 import * as validators from "../../utils/validators";
 import { CustomInput } from "../custom-input/custom-input";
 import { CustomRadioInput } from "../custom-radio-input/custom-radio-input";
 import styles from "./users-form.module.scss";
 
 export function UsersForm() {
+  const dispatch = useAppDispatch();
   const [userData, setUserData] = useState<User>({
     names: "",
     firstLastname: "",
@@ -20,6 +23,10 @@ export function UsersForm() {
     anyKids: "no",
     dateOfBirth: "",
   });
+
+  useEffect(() => {
+    dispatch(resetLoadingState());
+  }, []);
 
   const formIsCompleted = useMemo(() => {
     return (
@@ -78,7 +85,7 @@ export function UsersForm() {
   function inputHandler(e: any) {
     e.preventDefault();
     if (formIsCompleted) {
-      console.log("IS IS COMPLETED");
+      dispatch(addUser(userData));
     }
   }
 

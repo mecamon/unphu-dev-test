@@ -4,7 +4,7 @@ const appHeaders = new Headers();
 appHeaders.append("Content-Type", "application/json");
 
 export class UsersApi {
-  async getAll(): Promise<User> {
+  static async getAll(): Promise<any> {
     const res = await fetch("http://localhost:3000/users", {
       headers: appHeaders,
       method: "GET",
@@ -12,7 +12,7 @@ export class UsersApi {
     return await res.json();
   }
 
-  async addOne(user: User): Promise<any> {
+  static async addOne(user: User): Promise<any> {
     const res = await fetch("http://localhost:3000/users", {
       headers: appHeaders,
       method: "POST",

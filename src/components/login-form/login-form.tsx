@@ -30,7 +30,7 @@ export function LoginForm() {
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Contraseña</label>
           <CustomInput
             type="text"
             value={password}

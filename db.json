@@ -8,12 +8,32 @@
       "cedula": 10012344356,
       "age": 25,
       "gender": "m",
-      "address": ["Direccion numero 1", "Direccion numero 2"],
+      "address": [
+        "Direccion numero 1",
+        "Direccion numero 2"
+      ],
       "phone": 8091234567,
       "email": "carlos@mail.com",
       "status": "single",
       "anyKids": false,
       "dateOfBirth": "1995-10-05T14:48:00.000Z"
+    },
+    {
+      "names": "Juan",
+      "firstLastname": "Perez",
+      "secondLastname": "Sosa",
+      "cedula": 12345678,
+      "age": 23,
+      "gender": "m",
+      "address": [
+        "S"
+      ],
+      "phone": 8093212332,
+      "email": "juan@mail.com",
+      "status": "single",
+      "anyKids": "no",
+      "dateOfBirth": "1998-06-23",
+      "id": 2
     }
   ]
 }

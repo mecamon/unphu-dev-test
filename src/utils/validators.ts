@@ -2,7 +2,19 @@ export function required<T>(input: T): boolean {
   if (typeof input === "string") {
     return input.length > 0;
   }
-  return input !== 0;
+  return input !== undefined;
+}
+
+export function minLength<T>(min: number) {
+  return function (input: T) {
+    if (typeof input === "string") {
+      return input.length > min;
+    }
+    if (typeof input === "number") {
+      return input.toString().length > min;
+    }
+    return false;
+  };
 }
 
 export function validEmail(email: string) {

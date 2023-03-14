@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validEmail, validPassword, required } from "./validators";
+import { validEmail, validPassword, required, minLength } from "./validators";
 
 describe("validEmail tests", () => {
   const validEmailTests = [
@@ -39,13 +39,28 @@ describe("required tests", () => {
   const requiredTest = [
     { testName: "valid string input", entry: "Jonh", expected: true },
     { testName: "invalid string input", entry: "", expected: false },
-    { testName: "invalid number input", entry: 0, expected: false },
+    { testName: "invalid number input", entry: undefined, expected: false },
     { testName: "valid number input", entry: 323, expected: true },
   ];
   requiredTest.forEach((tt) => {
     it(tt.testName, () => {
       const result = required(tt.entry);
       expect(result).toEqual(tt.expected);
+    });
+  });
+});
+
+describe("minLength tests", () => {
+  const min = 3;
+  const minLengthTests = [
+    { testName: "valid input", entry: "Jonh", expected: true },
+    { testName: "invalid input", entry: "jj", expected: false },
+  ];
+  minLengthTests.forEach((tt) => {
+    it(tt.testName, () => {
+      const calcMinLenght = minLength(min);
+      const result = calcMinLenght(tt.entry);
+      expect(result).toBe(tt.expected);
     });
   });
 });

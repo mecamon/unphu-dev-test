@@ -104,6 +104,23 @@
       "anyKids": "si",
       "dateOfBirth": "2023-03-14",
       "id": 6
+    },
+    {
+      "names": "Wilkin",
+      "firstLastname": "Santana",
+      "secondLastname": "asda",
+      "cedula": 32434123123123,
+      "age": 20,
+      "gender": "m",
+      "address": [
+        "Romana"
+      ],
+      "phone": 8093123323,
+      "email": "wilkin@mail.com",
+      "status": "maried",
+      "anyKids": "no",
+      "dateOfBirth": "2003-06-14",
+      "id": 7
     }
   ]
 }

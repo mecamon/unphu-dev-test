@@ -7,6 +7,9 @@ import { CustomInput } from "../custom-input/custom-input";
 import { CustomRadioInput } from "../custom-radio-input/custom-radio-input";
 import styles from "./users-form.module.scss";
 
+const cedulaMinLength = 11;
+const phoneMinLength = 9;
+
 export function UsersForm() {
   const dispatch = useAppDispatch();
   const loading = useAppSelector((state) => state.users.loading);
@@ -14,11 +17,11 @@ export function UsersForm() {
     names: "",
     firstLastname: "",
     secondLastname: "",
-    cedula: undefined,
-    age: undefined,
+    cedula: "",
+    age: "",
     gender: "m",
     address: [""],
-    phone: undefined,
+    phone: "",
     email: "",
     status: "single",
     anyKids: "no",
@@ -33,12 +36,11 @@ export function UsersForm() {
     return (
       userData.names !== "" &&
       userData.firstLastname !== "" &&
-      userData.secondLastname !== "" &&
       userData.dateOfBirth !== "" &&
       validators.validEmail(userData.email) &&
-      userData.cedula !== undefined &&
-      userData.age !== undefined &&
-      userData.phone !== undefined &&
+      userData.cedula &&
+      userData.age &&
+      userData.phone &&
       userData.address.every((a) => a !== "")
     );
   }, [userData]);
@@ -55,14 +57,6 @@ export function UsersForm() {
         [field]: type === "number" ? Number(value) : value,
       }));
     }
-    // if (type === "date") {
-    //   const age = calculateAge();
-    //   console.log(age);
-    //   setUserData((u) => ({
-    //     ...u,
-    //     age: age,
-    //   }));
-    // }
   }
 
   function updateAddress(e: any) {
@@ -98,15 +92,14 @@ export function UsersForm() {
     }
   }
 
-  // function calculateAge() {
-  //   if (!userData.dateOfBirth) {
-  //     return undefined;
-  //   }
-  //   const birth = new Date(userData.dateOfBirth).getTime();
-  //   const now = Date.now() - birth;
-  //   const ageDate = new Date(birth - now);
-  //   return Math.abs(ageDate.getUTCFullYear() - 1970);
-  // }
+  function calculateAge() {
+    if (!userData.dateOfBirth) {
+      return undefined;
+    }
+    let diff = (new Date(userData.dateOfBirth).getTime() - Date.now()) / 1000;
+    diff /= 60 * 60 * 24;
+    return Math.abs(Math.round(diff / 365.25));
+  }
 
   return (
     <section className={styles.container}>
@@ -141,14 +134,17 @@ export function UsersForm() {
 
           <div className={styles.formDoubleGroup}>
             <div className={styles.formGroup}>
-              <label htmlFor="secondLastname">Segundo apellido</label>
+              <label htmlFor="secondLastname">
+                Segundo apellido{" "}
+                <span className={styles.notRequired}>(No requerido)</span>
+              </label>
               <CustomInput
                 fieldName="secondLastname"
                 messageErr="Este campo es requerido"
                 type="text"
                 onChange={(e) => changeHandler(e)}
                 value={userData?.secondLastname}
-                validateFunc={validators.required}
+                validateFunc={() => true}
               />
             </div>
             <div className={styles.formGroup}>
@@ -169,22 +165,22 @@ export function UsersForm() {
               <label htmlFor="cedula">Cédula</label>
               <CustomInput
                 fieldName="cedula"
-                messageErr="Este campo es requerido"
+                messageErr={`Logitud mínima de ${cedulaMinLength} charateres`}
                 type="number"
                 onChange={(e) => changeHandler(e)}
                 value={userData?.cedula}
-                validateFunc={validators.required}
+                validateFunc={validators.minLength(cedulaMinLength)}
               />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="phone">Teléfono</label>
               <CustomInput
                 fieldName="phone"
-                messageErr="Este campo es requerido"
+                messageErr={`Logitud mínima de ${phoneMinLength} charateres`}
                 type="number"
                 onChange={(e) => changeHandler(e)}
                 value={userData?.phone}
-                validateFunc={validators.required}
+                validateFunc={validators.minLength(phoneMinLength)}
               />
             </div>
           </div>
@@ -208,8 +204,9 @@ export function UsersForm() {
                 messageErr="Este campo es requerido"
                 type="number"
                 onChange={(e) => changeHandler(e)}
-                value={userData?.age}
+                value={userData.age}
                 validateFunc={validators.required}
+                placeholder={calculateAge()?.toString()}
               />
             </div>
           </div>

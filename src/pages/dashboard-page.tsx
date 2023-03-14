@@ -33,7 +33,7 @@ function DashboardPage() {
     <MainLayout>
       <SideBar>
         <SideBarTab
-          text="Listar usuarios"
+          text="Lista de usuarios"
           iconText="view_list"
           isSelected={currentTab === "list"}
           onClick={() => setCurrentTab("list")}

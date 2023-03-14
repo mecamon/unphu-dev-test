@@ -1,5 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { AppState } from "../index";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { UsersApi } from "../../interactors/users-api";
 import { User, UserPreview } from "../../models/models";
 
@@ -63,5 +62,4 @@ export const usersSlice = createSlice({
 });
 
 export const { resetLoadingState } = usersSlice.actions;
-export const selectUsersState = (state: AppState) => state.users.list;
 export default usersSlice.reducer;

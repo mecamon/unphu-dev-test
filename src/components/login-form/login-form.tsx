@@ -3,6 +3,7 @@ import { useAppDispatch } from "../../hooks/redux";
 import { login } from "../../store/slices/auth-slice";
 import { required } from "../../utils/validators";
 import { CustomInput } from "../custom-input/custom-input";
+import { MaskedInput } from "../masked-input/masked-input";
 import styles from "./login-form.module.scss";
 
 export function LoginForm() {

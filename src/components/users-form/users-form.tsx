@@ -7,9 +7,6 @@ import { CustomInput } from "../custom-input/custom-input";
 import { CustomRadioInput } from "../custom-radio-input/custom-radio-input";
 import styles from "./users-form.module.scss";
 
-const cedulaMinLength = 11;
-const phoneMinLength = 9;
-
 export function UsersForm() {
   const dispatch = useAppDispatch();
   const loading = useAppSelector((state) => state.users.loading);
@@ -33,14 +30,16 @@ export function UsersForm() {
   }, []);
 
   const formIsCompleted = useMemo(() => {
+    let strCedula = userData.cedula as string;
+    let strPhone = userData.phone as string;
     return (
       userData.names !== "" &&
       userData.firstLastname !== "" &&
       userData.dateOfBirth !== "" &&
       validators.validEmail(userData.email) &&
-      userData.cedula &&
+      !strCedula.includes("_") &&
       userData.age &&
-      userData.phone &&
+      !strPhone.includes("_") &&
       userData.address.every((a) => a !== "")
     );
   }, [userData]);
@@ -87,9 +86,23 @@ export function UsersForm() {
 
   function inputHandler(e: any) {
     e.preventDefault();
+    const cleanUser = getCleanUserData();
     if (formIsCompleted) {
-      dispatch(addUser(userData));
+      dispatch(addUser(cleanUser));
     }
+  }
+
+  function getCleanUserData(): User {
+    const phoneStr = userData.phone as string;
+    const cedulaStr = userData.cedula as string;
+    const cleanPhone = phoneStr.replace(/\D/g, "");
+    const cleanCedula = cedulaStr.replace(/\D/g, "");
+
+    const cleanUser = { ...userData };
+    cleanUser.phone = Number(cleanPhone);
+    cleanUser.cedula = Number(cleanCedula);
+
+    return cleanUser;
   }
 
   function calculateAge() {
@@ -165,22 +178,24 @@ export function UsersForm() {
               <label htmlFor="cedula">Cédula</label>
               <CustomInput
                 fieldName="cedula"
-                messageErr={`Logitud mínima de ${cedulaMinLength} charateres`}
+                messageErr={"Rellene todos los carateres restantes"}
                 type="number"
+                mask="cedula"
                 onChange={(e) => changeHandler(e)}
                 value={userData?.cedula}
-                validateFunc={validators.minLength(cedulaMinLength)}
+                validateFunc={(input: string) => !input.includes("_")}
               />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="phone">Teléfono</label>
               <CustomInput
                 fieldName="phone"
-                messageErr={`Logitud mínima de ${phoneMinLength} charateres`}
+                messageErr={"Rellene todos los carateres restantes"}
                 type="number"
+                mask="phone"
                 onChange={(e) => changeHandler(e)}
                 value={userData?.phone}
-                validateFunc={validators.minLength(phoneMinLength)}
+                validateFunc={(input: string) => !input.includes("_")}
               />
             </div>
           </div>
@@ -293,7 +308,7 @@ export function UsersForm() {
           <input
             className="submit"
             type="submit"
-            value="Agregar"
+            value="Guardar"
             disabled={!formIsCompleted || loading === "loading"}
           />
         </form>

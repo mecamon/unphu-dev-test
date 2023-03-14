@@ -14,7 +14,7 @@
 :root {
   --base-color-1: #f2eee7;
   --input--bg-color: #f4f1ee;
-  --card-bg-color: #f7f7f7;
+  --card-bg-color: #f4f1ee;
   --base-color-2: #f4dd99;
   --border-color-1: #704b8c;
   --accent-color: #2d8bd7;
@@ -95,6 +95,12 @@ input {
 }
 .flex-row-centered {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column-centered {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

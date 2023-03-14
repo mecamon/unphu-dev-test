@@ -32,7 +32,7 @@ export function MainHeader() {
                 key="logout-button"
                 onClick={() => logout()}
               >
-                Log out
+                Cerrar sesión
               </button>,
             ]}
           />

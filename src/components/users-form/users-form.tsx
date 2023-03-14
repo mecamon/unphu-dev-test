@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useAppDispatch } from "../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { User } from "../../models/models";
 import { addUser, resetLoadingState } from "../../store/slices/users-slice";
 import * as validators from "../../utils/validators";
@@ -9,6 +9,7 @@ import styles from "./users-form.module.scss";
 
 export function UsersForm() {
   const dispatch = useAppDispatch();
+  const loading = useAppSelector((state) => state.users.loading);
   const [userData, setUserData] = useState<User>({
     names: "",
     firstLastname: "",
@@ -54,6 +55,14 @@ export function UsersForm() {
         [field]: type === "number" ? Number(value) : value,
       }));
     }
+    // if (type === "date") {
+    //   const age = calculateAge();
+    //   console.log(age);
+    //   setUserData((u) => ({
+    //     ...u,
+    //     age: age,
+    //   }));
+    // }
   }
 
   function updateAddress(e: any) {
@@ -88,6 +97,16 @@ export function UsersForm() {
       dispatch(addUser(userData));
     }
   }
+
+  // function calculateAge() {
+  //   if (!userData.dateOfBirth) {
+  //     return undefined;
+  //   }
+  //   const birth = new Date(userData.dateOfBirth).getTime();
+  //   const now = Date.now() - birth;
+  //   const ageDate = new Date(birth - now);
+  //   return Math.abs(ageDate.getUTCFullYear() - 1970);
+  // }
 
   return (
     <section className={styles.container}>
@@ -278,7 +297,7 @@ export function UsersForm() {
             className="submit"
             type="submit"
             value="Agregar"
-            disabled={!formIsCompleted}
+            disabled={!formIsCompleted || loading === "loading"}
           />
         </form>
       </div>

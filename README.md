@@ -1,3 +1,11 @@
+# Run
+
+En ausencia de un backend, hice uso del paquete de json-server para persistir la información de los usuarios. Por tanto, necesita correr primero el comando "yarn server" antes de correr la app con "yarn dev".
+
+# Uso
+
+Para hacer login no necesita un password y usuario en específico, con que llene los campos es suficiente. No será posible hacer login si están vacios. Una vez dentro estarán el resto de las funcionalidades requeridas.
+
 # React Test
 
 Esta es una prueba de evaluación para la posición de `TypeScript React developer` en el departamento de desarrollo de la UNPHU.

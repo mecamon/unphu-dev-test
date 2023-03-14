@@ -10,7 +10,6 @@ import App from "./App";
 import "./index.scss";
 import DashboardPage from "./pages/dashboard-page";
 import LoginPage from "./pages/login-page";
-import { AuthProvider } from "./providers/auth-provider";
 import { ViewModeProvider } from "./providers/view-mode-provider";
 import { store } from "./store";
 import { Provider } from "react-redux";
@@ -20,13 +19,11 @@ const router = createBrowserRouter(
     <Route
       path="/"
       element={
-        <AuthProvider>
-          <ViewModeProvider>
-            <Provider store={store}>
-              <App />
-            </Provider>
-          </ViewModeProvider>
-        </AuthProvider>
+        <ViewModeProvider>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </ViewModeProvider>
       }
     >
       <Route path="/login" element={<LoginPage />} />

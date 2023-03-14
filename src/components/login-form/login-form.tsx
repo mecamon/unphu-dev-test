@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useAuthContext } from "../../providers/auth-provider";
+import { useAppDispatch } from "../../hooks/redux";
+import { login } from "../../store/slices/auth-slice";
 import { required } from "../../utils/validators";
 import { CustomInput } from "../custom-input/custom-input";
 import styles from "./login-form.module.scss";
@@ -7,11 +8,11 @@ import styles from "./login-form.module.scss";
 export function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useAuthContext();
+  const dispath = useAppDispatch();
 
   function submitHandler(e: any) {
     e.preventDefault();
-    login();
+    dispath(login());
   }
 
   return (

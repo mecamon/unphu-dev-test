@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { useAuthContext } from "./providers/auth-provider";
+import { useAppSelector } from "./hooks/redux";
 import { useViewModeContext } from "./providers/view-mode-provider";
 
 function App() {
-  const { isLogged } = useAuthContext();
+  const isLogged = useAppSelector((state) => state.auth.isLogged);
   const { setIsMobileView } = useViewModeContext();
   const navigate = useNavigate();
 

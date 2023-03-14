@@ -1,10 +1,11 @@
-import { useAuthContext } from "../../providers/auth-provider";
+import { useAppDispatch } from "../../hooks/redux";
 import { useViewModeContext } from "../../providers/view-mode-provider";
+import { logout } from "../../store/slices/auth-slice";
 import { GenericDropdown } from "../generic-dropdown/generic-dropdown";
 import styles from "./main-header.module.scss";
 
 export function MainHeader() {
-  const { logout } = useAuthContext();
+  const dispath = useAppDispatch();
   const { isMobileView, isShowingMobileMenu, setIsShowingMobileMenu } =
     useViewModeContext();
 
@@ -30,7 +31,7 @@ export function MainHeader() {
               <button
                 className="list-button-item"
                 key="logout-button"
-                onClick={() => logout()}
+                onClick={() => dispath(logout())}
               >
                 Cerrar sesión
               </button>,

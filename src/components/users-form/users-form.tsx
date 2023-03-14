@@ -93,6 +93,7 @@ export function UsersForm() {
     <section className={styles.container}>
       <div className={styles.content}>
         <h2>Agregar nuevo usuario</h2>
+        <hr className={styles.hr} />
         <form onSubmit={(e) => inputHandler(e)}>
           <div className={styles.formDoubleGroup}>
             <div className={styles.formGroup}>
@@ -273,7 +274,6 @@ export function UsersForm() {
               />
             </div>
           </div>
-
           <input
             className="submit"
             type="submit"

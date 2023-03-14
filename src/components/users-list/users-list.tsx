@@ -22,16 +22,25 @@ export function UsersList() {
   }
 
   if (loading === "loading") {
-    //placeholder
-    return <span>Loading....</span>;
+    return (
+      <section className={styles.loadingContainer}>
+        <span className="loader"></span>
+        <span>Cargando usuarios...</span>
+      </section>
+    );
   }
   if (users.length === 0 && loading === "idle") {
-    //placeholder
-    return <span>Nada</span>;
+    return (
+      <section className={styles.loadingContainer}>
+        <span>No hay usuarios aun</span>
+        <span className="material-icons">sentiment_dissatisfied</span>
+      </section>
+    );
   }
   return (
     <section className={styles.container}>
       <h2>Usuarios</h2>
+      <hr className={styles.hr} />
       <div className={styles.cardsArea}>
         {users.map((u) => (
           <UserCard key={u.id} user={u} />

@@ -17,7 +17,8 @@ export function SideBar({ children }: { children: ReactNode }) {
             : `${styles.container} + ${styles.hidden}`
         }
       >
-        <h2>Menu</h2>
+        <h2 className={styles.title}>Menu</h2>
+        <hr className={styles.hr} />
         {isMobileView && (
           <button
             className={styles.close}
@@ -29,9 +30,8 @@ export function SideBar({ children }: { children: ReactNode }) {
         {children}
         <footer>
           <p>
-            This is a placeholder for the footer. This is a placeholder for the
-            footer. This is a placeholder for the footer. This is a placeholder
-            for the footer.
+            Esto es una prueba técnica para la posicíon de desarrollandor
+            Front-end.
           </p>
         </footer>
       </aside>

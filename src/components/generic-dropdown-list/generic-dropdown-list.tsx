@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { makeClickOutside } from "../../utils/click-outside-element";
 import { progresiveCount } from "../../utils/progresive-count";
 import styles from "./generic-dropdown-list.module.scss";
@@ -8,7 +8,7 @@ export function GenericDropdownList({
   onClickOutsideHandler,
   elements,
 }: Props) {
-  const [containerID, setContainerID] = useState(progresiveCount().toString());
+  const [containerID] = useState(progresiveCount().toString());
 
   useEffect(() => {
     const clickOutside = makeClickOutside(

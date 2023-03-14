@@ -14,6 +14,7 @@
 :root {
   --base-color-1: #f2eee7;
   --input--bg-color: #f4f1ee;
+  --card-bg-color: #f7f7f7;
   --base-color-2: #f4dd99;
   --border-color-1: #704b8c;
   --accent-color: #2d8bd7;
@@ -41,8 +42,8 @@ input {
   display: block;
   font-size: 50px;
   color: white;
-  background-color: var(--border-color-1);
-  border: 1px var(--border-color-1) solid;
+  background-color: var(--accent-color);
+  // border: 1px var(--border-color-1) solid;
   border-radius: 99999px;
 }
 
@@ -97,3 +98,22 @@ input {
   justify-content: center;
   align-items: center;
 }
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #929292;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 

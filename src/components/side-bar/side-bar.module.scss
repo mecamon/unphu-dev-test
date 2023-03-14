@@ -16,12 +16,18 @@ footer {
   height: 100%;
   min-width: 340px;
   max-width: 340px;
-  background-color: white;
+  background-color: rgb(255, 251, 250);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  h2 {
+  .title {
+    margin: 0;
     margin-left: 16px;
-    margin-bottom: 40px !important;
     font-size: 32px;
+  }
+  hr {
+    width: 180px;
+    margin-bottom: 40px !important;
+    border: 3px var(--base-color-2) solid;
+    border-radius: 9999px;
   }
 }
 
@@ -44,18 +50,25 @@ footer {
 @media (min-width: 1240px) {
   .container {
     position: relative;
-    padding: 60px 32px;
+    padding: 0 32px;
+    padding-top: 30px;
+    padding-bottom: 60px;
     width: fit-content;
     height: fit-content;
     min-width: 340px;
     max-width: 340px;
-    background-color: white;
+    background-color: rgb(255, 251, 250);
     border-radius: 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     h2 {
       margin-left: 16px;
-      margin-bottom: 40px !important;
       font-size: 32px;
+    }
+    .hr {
+      width: 180px;
+      margin-bottom: 48px !important;
+      border: 3px var(--base-color-2) solid;
+      border-radius: 9999px;
     }
   }
 }

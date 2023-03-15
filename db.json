@@ -8,10 +8,7 @@
       "cedula": 10012344356,
       "age": 25,
       "gender": "m",
-      "address": [
-        "Direccion numero 1",
-        "Direccion numero 2"
-      ],
+      "address": ["Direccion numero 1", "Direccion numero 2"],
       "phone": 8091234567,
       "email": "carlos@mail.com",
       "status": "single",
@@ -25,9 +22,7 @@
       "cedula": 12345678,
       "age": 23,
       "gender": "m",
-      "address": [
-        "S"
-      ],
+      "address": ["S"],
       "phone": 8093212332,
       "email": "juan@mail.com",
       "status": "single",
@@ -42,9 +37,7 @@
       "cedula": 123141243,
       "age": 23,
       "gender": "f",
-      "address": [
-        "a"
-      ],
+      "address": ["a"],
       "phone": 12312312312,
       "email": "maria@mail.com",
       "status": "maried",
@@ -59,10 +52,7 @@
       "cedula": 123123131,
       "age": 22,
       "gender": "m",
-      "address": [
-        "Illinois, Chicago",
-        "USA"
-      ],
+      "address": ["Illinois, Chicago", "USA"],
       "phone": 123131231,
       "email": "jonh@mail.com",
       "status": "maried",
@@ -77,10 +67,7 @@
       "cedula": 1231231231,
       "age": 29,
       "gender": "m",
-      "address": [
-        "Calle 1, San Juan",
-        "Republica Dominicana"
-      ],
+      "address": ["Calle 1, San Juan", "Republica Dominicana"],
       "phone": 12312312311231,
       "email": "pedro@mail.com",
       "status": "single",
@@ -95,9 +82,7 @@
       "cedula": 1231231231,
       "age": 32,
       "gender": "f",
-      "address": [
-        "Calle 8, Samaná"
-      ],
+      "address": ["Calle 8, Samaná"],
       "phone": 234231212311,
       "email": "jorgelin@mail.com",
       "status": "maried",
@@ -112,9 +97,7 @@
       "cedula": 32434123123123,
       "age": 20,
       "gender": "m",
-      "address": [
-        "Romana"
-      ],
+      "address": ["Romana"],
       "phone": 8093123323,
       "email": "wilkin@mail.com",
       "status": "maried",
@@ -129,16 +112,28 @@
       "cedula": 12345245235,
       "age": 27,
       "gender": "m",
-      "address": [
-        "Tatica Castro #3",
-        "Tatica Castro #3"
-      ],
+      "address": ["Tatica Castro #3", "Tatica Castro #3"],
       "phone": 2342352344,
       "email": "pablo@mail.com",
       "status": "single",
       "anyKids": "no",
       "dateOfBirth": "1996-02-07",
       "id": 8
+    },
+    {
+      "names": "Perla",
+      "firstLastname": "Maciel",
+      "secondLastname": "",
+      "cedula": 12345678912,
+      "age": 18,
+      "gender": "f",
+      "address": ["Calle 2", "San Juan"],
+      "phone": 1231412452,
+      "email": "perla@mail.com",
+      "status": "single",
+      "anyKids": "no",
+      "dateOfBirth": "2005-03-02",
+      "id": 10
     }
   ]
 }

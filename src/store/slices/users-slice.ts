@@ -52,6 +52,9 @@ export const usersSlice = createSlice({
       }));
       state.totalOfUsers = count;
     });
+    builder.addCase(fetchUsers.rejected, (state) => {
+      state.loading = "failed";
+    });
     builder.addCase(addUser.pending, (state) => {
       state.loading = "loading";
     });

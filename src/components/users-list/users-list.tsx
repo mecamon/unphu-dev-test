@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { fetchUsers } from "../../store/slices/users-slice";
+import { fetchUsers, resetLoadingState } from "../../store/slices/users-slice";
 import { Pagination } from "../pagination/pagination";
 import { UserCard } from "../user-card/user-card";
 import styles from "./users-list.module.scss";
@@ -13,6 +13,7 @@ export function UsersList() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    dispatch(resetLoadingState());
     dispatch(fetchUsers(page));
   }, []);
 
@@ -26,6 +27,15 @@ export function UsersList() {
       <section className={styles.loadingContainer}>
         <span className="loader"></span>
         <span>Cargando usuarios...</span>
+      </section>
+    );
+  }
+
+  if (loading === "failed") {
+    return (
+      <section className={styles.loadingContainer}>
+        <span>Error cargando usuarios</span>
+        <span className="material-icons">sentiment_dissatisfied</span>
       </section>
     );
   }

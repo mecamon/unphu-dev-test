@@ -12,7 +12,7 @@ export function UserCard({ user }: { user: UserPreview }) {
             </span>
           ) : (
             <span className={`material-icons ${styles.genderIcon}`}>
-              face_4
+              face_3
             </span>
           )}
           <span data-testid="complete-name" className={styles.name}>

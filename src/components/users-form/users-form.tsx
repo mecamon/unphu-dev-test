@@ -149,7 +149,7 @@ export function UsersForm() {
             <div className={styles.formGroup}>
               <label htmlFor="secondLastname">
                 Segundo apellido{" "}
-                <span className={styles.notRequired}>(No requerido)</span>
+                <span className={styles.notRequired}>(Opcional)</span>
               </label>
               <CustomInput
                 fieldName="secondLastname"

@@ -30,7 +30,7 @@ export function SideBar({ children }: { children: ReactNode }) {
         {children}
         <footer>
           <p>
-            Esto es una prueba técnica para la posicíon de desarrollandor
+            Esto es una prueba técnica para la posicíon de desarrollador
             Front-end.
           </p>
         </footer>

@@ -18,7 +18,7 @@ function DashboardPage() {
     }
   }, [loading]);
 
-  function getTabs(): JSX.Element {
+  function displayCurrentTab(): JSX.Element {
     switch (currentTab) {
       case "list":
         return <UsersList />;
@@ -50,7 +50,7 @@ function DashboardPage() {
           onClick={() => dispath(logout())}
         />
       </SideBar>
-      <main className="w-full">{getTabs()}</main>
+      <main className="w-full">{displayCurrentTab()}</main>
     </MainLayout>
   );
 }

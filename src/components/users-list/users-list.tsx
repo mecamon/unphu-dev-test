@@ -4,7 +4,6 @@ import { fetchUsers } from "../../store/slices/users-slice";
 import { Pagination } from "../pagination/pagination";
 import { UserCard } from "../user-card/user-card";
 import styles from "./users-list.module.scss";
-import InputMask from "react-input-mask";
 
 export function UsersList() {
   const dispatch = useAppDispatch();
@@ -12,8 +11,6 @@ export function UsersList() {
   const loading = useAppSelector((state) => state.users.loading);
   const totalOfItems = useAppSelector((state) => state.users.totalOfUsers);
   const [page, setPage] = useState(1);
-
-  const [phone, setPhone] = useState("");
 
   useEffect(() => {
     dispatch(fetchUsers(page));
@@ -32,6 +29,7 @@ export function UsersList() {
       </section>
     );
   }
+
   if (users.length === 0 && loading === "idle") {
     return (
       <section className={styles.loadingContainer}>
@@ -40,6 +38,7 @@ export function UsersList() {
       </section>
     );
   }
+
   return (
     <section className={styles.container}>
       <h2>Usuarios</h2>

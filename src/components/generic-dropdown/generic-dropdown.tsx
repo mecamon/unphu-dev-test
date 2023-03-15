@@ -4,9 +4,7 @@ import { GenericDropdownList } from "../generic-dropdown-list/generic-dropdown-l
 
 export function GenericDropdown({ text, icon, childrenList }: Props) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [triggerID, setTriggerID] = useState<string>(
-    progresiveCount().toString()
-  );
+  const [triggerID] = useState<string>(progresiveCount().toString());
 
   return (
     <div>

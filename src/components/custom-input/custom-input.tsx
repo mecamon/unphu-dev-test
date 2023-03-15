@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./custom-input.module.scss";
 import InputMask from "react-input-mask";
 
@@ -14,6 +14,8 @@ export function CustomInput({
   mask,
 }: Props) {
   const [isValid, setIsvalid] = useState(true);
+  const ref = useRef(null);
+
   function getInput() {
     switch (mask) {
       case "phone":
@@ -42,6 +44,7 @@ export function CustomInput({
             placeholder={placeholder}
             className={!isValid ? styles.invalid : styles.valid}
             value={value}
+            ref={ref}
             onChange={onChange}
             onBlur={() => setIsvalid(validateFunc(value))}
           ></InputMask>
@@ -65,20 +68,7 @@ export function CustomInput({
 
   return (
     <div className={styles.container}>
-      {/* <input
-        autoComplete="off"
-        id={id ? id : fieldName}
-        type={type}
-        name={fieldName}
-        placeholder={placeholder}
-        className={!isValid ? styles.invalid : styles.valid}
-        value={value}
-        onChange={onChange}
-        onBlur={() => setIsvalid(validateFunc(value))}
-      /> */}
-
       {getInput()}
-
       <span
         className={
           isValid ? `${styles.danger} hidden` : `${styles.danger} visible`

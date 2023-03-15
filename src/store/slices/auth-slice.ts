@@ -15,6 +15,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     login(state) {
+      // in absence of a proper backend with JWT, there is a hardcoded token
       localStorage.setItem("token", "q2134qwedadassdasdafa");
       state.isLogged = true;
     },

@@ -10,6 +10,26 @@ function App() {
   const { setIsMobileView } = useViewModeContext();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    dispath(checkLoginState());
+  }, []);
+
+  useEffect(() => {
+    if (!isLogged) {
+      navigate("/login", { replace: true });
+    } else {
+      navigate("/", { replace: true });
+    }
+  }, [isLogged]);
+
+  useEffect(() => {
+    handleMobileView(window.innerWidth);
+    window.addEventListener("resize", onWindowsResize);
+    return () => {
+      window.removeEventListener("resize", onWindowsResize);
+    };
+  }, []);
+
   function onWindowsResize(e: any) {
     handleMobileView(e.target.innerWidth);
   }
@@ -22,25 +42,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    dispath(checkLoginState());
-  }, []);
-
-  useEffect(() => {
-    handleMobileView(window.innerWidth);
-    window.addEventListener("resize", onWindowsResize);
-    return () => {
-      window.removeEventListener("resize", onWindowsResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isLogged) {
-      navigate("/login", { replace: true });
-    } else {
-      navigate("/", { replace: true });
-    }
-  }, [isLogged]);
   return <Outlet />;
 }
 
